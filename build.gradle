@@ -4,9 +4,20 @@
  * © 2012 Daniel Thommes
  */
 apply plugin: 'java'
+apply plugin: 'maven'
 
 repositories { mavenCentral() }
 
 dependencies {
 	compile 'commons-logging:commons-logging:1.1.1'
+}
+
+task writeNewPom  << {
+    pom{
+    	project {
+    		version '1.0'
+			groupId 'org.droid.java.beans'
+			artifactId 'droid-java-beans'
+        }
+    }.writeTo("pom.xml")
 }
