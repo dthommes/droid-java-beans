@@ -6,6 +6,9 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
+project.group 'org.droid-java-beans'
+project.version '1.0'
+
 repositories { mavenCentral() }
 
 dependencies {
@@ -13,11 +16,5 @@ dependencies {
 }
 
 task writeNewPom  << {
-    pom{
-    	project {
-    		version '1.0'
-			groupId 'org.droid.java.beans'
-			artifactId 'droid-java-beans'
-        }
-    }.writeTo("pom.xml")
+    pom{}.writeTo("pom.xml")
 }
