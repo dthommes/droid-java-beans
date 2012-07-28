@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="droid-java-beans" default="package">
+
+	<!-- ==== Version info for this project ==================== -->
+	<property name="versioninfo.version" value="0.1 SNAPSHOT" />
+
+	<property name="src.dir" value="src/main/java" />
+	<property name="jar.repository" value="../RemoteUI-jar-repository" />
+
+	<path id="classpath">
+		<fileset dir="${jar.repository}/nds-logging/1.0.3" includes="*.jar" />
+	</path>
+
+	<!-- - - - - - - - - - - - - - - - - -
+          target: init
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init">
+		<echo>Initing ${ant.project.name}</echo>
+		<mkdir dir="target/classes" />
+	</target>
+
+	<!-- =================================
+          target: clean
+         ================================= -->
+	<target name="clean">
+		<delete dir="target">
+		</delete>
+	</target>
+
+
+	<!-- - - - - - - - - - - - - - - - - -
+          target: build-dependent-projects
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-dependent-projects">
+	</target>
+
+
+	<!-- =================================
+          target: compile
+         ================================= -->
+	<target name="compile" depends="init, build-dependent-projects">
+		<echo>Compiling ${ant.project.name}</echo>
+		<javac includeantruntime="false"
+		       destdir="target/classes"
+		       source="1.5"
+		       target="1.5"
+		       classpathref="classpath"
+		       srcdir="${src.dir}"
+		       debug="true" />
+	</target>
+
+	<!-- =================================
+          target: package
+         ================================= -->
+	<target name="package" depends="compile">
+		<jar destfile="target/${ant.project.name}.jar" duplicate="fail">
+			<manifest>
+				<section name="versioninfo">
+					<attribute name="productname" value="Java Beans (java.beans) for Android" />
+					<attribute name="productversion" value="${versioninfo.version}" />
+					<attribute name="copyright" value="©2012 Daniel Thommes" />
+				</section>
+			</manifest>
+			<fileset dir="target/classes" />
+		</jar>
+	</target>
+
+</project>

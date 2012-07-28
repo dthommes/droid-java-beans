@@ -1,0 +1,12 @@
+/**
+ * Created on 2012-07-28
+ *
+ * © 2012 Daniel Thommes
+ */
+apply plugin: 'java'
+
+repositories { mavenCentral() }
+
+dependencies {
+	compile 'commons-logging:commons-logging:1.1.1'
+}
