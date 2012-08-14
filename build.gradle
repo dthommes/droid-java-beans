@@ -7,7 +7,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 project.group 'org.droid-java-beans'
-project.version '1.0'
+project.version '1.0.0'
 
 repositories { mavenCentral() }
 
@@ -15,6 +15,6 @@ dependencies {
 	compile 'commons-logging:commons-logging:1.1.1'
 }
 
-task writeNewPom  << {
+task pom  << {
     pom{}.writeTo("pom.xml")
 }

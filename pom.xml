@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.droid-java-beans</groupId>
   <artifactId>droid-java-beans</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <dependencies>
     <dependency>
       <groupId>commons-logging</groupId>
