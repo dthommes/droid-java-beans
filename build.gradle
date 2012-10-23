@@ -7,7 +7,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 project.group 'org.droid-java-beans'
-project.version '1.0.0'
+project.version '1.0.1'
 
 repositories { mavenCentral() }
 
